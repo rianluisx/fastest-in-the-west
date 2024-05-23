@@ -3,7 +3,7 @@
     include '../DBConnector.php';
 
     
-
+    echo 'test';
 
 
 
