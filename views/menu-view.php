@@ -28,9 +28,7 @@
                     <input type='text' name='food_ID' value=" . $row['food_ID'] . " style='display:none'>
                     <button type='submit'>order</button>
                     </form>
-                
                 </td>
-
             </tr>";
     }
 
