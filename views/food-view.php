@@ -3,6 +3,4 @@
     include '../DBConnector.php';
 
 
-
-
 ?>
