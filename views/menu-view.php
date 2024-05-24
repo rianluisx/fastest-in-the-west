@@ -19,7 +19,7 @@
 
                     "<form action='food-view.php' method='post'>" .
                         "<input type='image' class='center' src='" . $row['food_image'] . "' alt='" . $row['food_name'] . "'>" .
-                        "<input type='hidden' name='food_id' value='" . $row['food_id'] . "'>" .
+                        "<input type='hidden' name='food_id' value='" . $row['food_ID'] . "'>" .
                     "</form>" .
 
                     "<div class='container'>" .
