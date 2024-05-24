@@ -14,7 +14,7 @@
             echo "<div class ='cards'>";
                 echo "<img class = 'center' src = '" . $row['food_image'] . "' alt = ' " .$row['food_name'] . " '";
                 echo "<div class = 'container'>";
-                    echo "<h4><b>" . $row['food_name'] . "</h4><b>";  
+                    echo "<h4><b>" . $row['food_name'] . "</h4><b>";
                 echo "</div>";
             echo "</div>";
   
