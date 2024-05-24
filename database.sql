@@ -25,6 +25,7 @@ CREATE TABLE orders (
     order_ID INT AUTO_INCREMENT,
     customer_ID INT (6),
     food_ID INT(6),
+    order_date DATETIME,
     -- PRIMARY KEY (order_id) no idea if i primary key ang orderid since what if ang user mag order twice? like
     -- would that have the same order_ID or a diff one
     PRIMARY KEY (order_ID),
@@ -39,7 +40,7 @@ CREATE TABLE order_details(
     food_ID INT(6),
     quantity INT,
     order_price DECIMAL(10,2),
-    FOREIGN KEY (order_ID) REFERENCES orders(order_ID),
+    FOREIGN KEY (order_ID) REFERENCES orders(order_ID) ON DELETE CASCADE,
     FOREIGN KEY (food_ID) REFERENCES menu(food_ID)
 
 ) ENGINE = InnoDB;

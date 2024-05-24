@@ -1,8 +1,8 @@
+/* menu view css for cards */
+
 .cards-container{
     position: relative;
     top: 110px;
-
-
 }
 
 
@@ -37,11 +37,100 @@
 
 }
 
-
 input[type ='image'] {
     border-radius: 5px 5px 0 0;
     object-fit: cover;
     width: 100px;
     height: 100px;
+    position: relative;
+    top: 5px;
     
+}
+
+/* food view css for cards */
+.cards-container-food{
+    position: relative;
+    top: 110px;
+}
+
+.cards-food {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.cards-food:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container-food {
+    padding: 12px 16px;
+
+}
+
+.container-food h4{
+    margin: 0;
+    font-size: 20px;
+}
+
+.lorem{
+    text-align: justify;
+    position: relative;
+    top: 10px;
+}
+
+.quantity{
+    width: 150px;
+    position: relative;
+    top: 50px;
+}
+
+.quantity label{
+
+}
+
+img{
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 12px; 
+}
+
+/* customer view css for cards */
+
+.cards-container-customer{
+    position: relative;
+    top: 110px;
+}
+
+.cards-customer {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.cards-customer:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container-customer {
+    padding: 12px 16px;
+
+}
+
+.container-customer h4{
+    margin: 0;
+    font-size: 20px;
 }
