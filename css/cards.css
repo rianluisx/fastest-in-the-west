@@ -1,9 +1,18 @@
+.cards-container{
+    position: relative;
+    top: 110px;
+
+
+}
+
+
 .cards {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin: auto;
     width: 300px;
     border-radius: 5px;
+    text-align: center;
 
 }
 
@@ -12,8 +21,9 @@
 }
 
 .container {
-    padding: 2px 16px;
-    float: left;
+    padding: 10px 16px;
+
+
 }
 
 .container h4{
@@ -24,14 +34,11 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+
 }
 
-table{
-    width: 100%;
-}
 
-img {
+input[type ='image'] {
     border-radius: 5px 5px 0 0;
     object-fit: cover;
     width: 100px;
