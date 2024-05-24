@@ -1,8 +1,8 @@
 CREATE TABLE customer (
 
     customer_ID INT(6) AUTO_INCREMENT,
-    name VARCHAR(100),
-    address VARCHAR(100),
+    customer_name VARCHAR(100),
+    customer_address VARCHAR(100),
     PRIMARY KEY (customer_ID)
 
 ) ENGINE=InnoDB;
@@ -10,10 +10,10 @@ CREATE TABLE customer (
 
 CREATE TABLE menu (
 
-    food_ID INT(6) AUTO_INCREMENT, 
-    stock INT,
-    price DECIMAL(10,2),
+    food_ID INT(6) AUTO_INCREMENT,
     food_name VARCHAR(60),
+    price DECIMAL(10,2), 
+    stock INT,
     food_image VARCHAR(60),
     PRIMARY KEY(food_ID)
 
