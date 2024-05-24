@@ -1,0 +1,32 @@
+img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid;
+}
+
+h2 {
+  text-align: center;
+}
+
+#add-button {
+  width: 35%;
+  height: 30px;
+  text-align: center;
+}
+
+.button-container {
+  margin: 10px;
+  text-align: center;
+}
