@@ -1,7 +1,7 @@
 <?php 
 
     include "../DBConnector.php";
-
+    session_start();
     echo "<link rel='stylesheet' href='../css/cards.css'> ";
     echo "<link rel='stylesheet' href='../css/style.css'>";
     echo "<link rel='stylesheet' href='../css/buttons.css'>";
@@ -23,6 +23,4 @@
             "</div>" .
             "<br>" .
         "</div>";
-
-
 ?>

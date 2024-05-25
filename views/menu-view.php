@@ -2,7 +2,8 @@
 
     include '../DBConnector.php';
 
-
+    print_r($_POST);
+    echo "<br>";
     if(isset($_POST['customer_name']) && isset($_POST['customer_address'])) {
 
         $customerName = $_POST['customer_name'];
