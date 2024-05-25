@@ -40,7 +40,8 @@
             $order_price = $food_quantity * $food_price;
             $insertOrderDetails = "INSERT INTO order_details (order_ID, food_ID, quantity, order_price) VALUES ('$order_ID', '$food_ID', '$food_quantity', '$order_price')";
             $detailsInserted = $conn->query($insertOrderDetails);
-            
+            $setInventoryQuery = "UPDATE menu SET stock = stock - $food_quantity WHERE food_ID = '$food_ID';";
+            $invetoryUpdate = $conn->query($setInventoryQuery);
         }
     }
     echo "<script> alert('Order Submitted'); </script>";
