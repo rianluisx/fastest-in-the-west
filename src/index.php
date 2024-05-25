@@ -10,17 +10,16 @@
 
   <body>
     <div class="user-options">
+      <img src="../logo/fastest.png" alt="logo">
       <div class="header">
         <h1>Fastest in the West</h1>
         <p>a fast food restaurant system</p>
       </div>
-
-      <br />
-
+      <br/>
       <form action="../views/customer-view.php" method="post">
         <button type="submit">Order</button>
       </form>
-      <br />
+      <br/>
       <form action="../views/manage-order-view.php" method="post">
         <button type="submit">Manage Order</button>
       </form>
@@ -29,5 +28,6 @@
         <button type="submit">Manage Menu</button>
       </form>
     </div>
+
   </body>
 </html>

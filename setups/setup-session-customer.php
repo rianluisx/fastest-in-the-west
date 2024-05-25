@@ -19,6 +19,5 @@
         $order_ID = $conn->query($new_order_ID_qry)->fetch_assoc()['last_ID'] ?? 0;
         $_SESSION['order_ID'] = $order_ID;
     }
-    print_r($_SESSION);
-    header("refresh: 1; url=../views/menu-view.php");
+    header("refresh: 0.5; url=../views/menu-view.php");
 ?>
