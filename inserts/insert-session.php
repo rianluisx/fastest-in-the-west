@@ -34,8 +34,10 @@
     $order_ID = $conn->insert_id;
 
     foreach ($orders as $food_ID => $food_quantity) {
-        if ($food_quantity > 0) { 
-            $order_price = $food_quantity * 1;  
+        $foodPriceQuery = "SELECT price FROM menu WHERE food_ID = '$food_ID';";
+        $food_price = $conn->query($foodPriceQuery)->fetch_assoc()['price'];
+        if ($food_quantity > 0) {
+            $order_price = $food_quantity * $food_price;
             $insertOrderDetails = "INSERT INTO order_details (order_ID, food_ID, quantity, order_price) VALUES ('$order_ID', '$food_ID', '$food_quantity', '$order_price')";
             $detailsInserted = $conn->query($insertOrderDetails);
             

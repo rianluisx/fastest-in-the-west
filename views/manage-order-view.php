@@ -22,7 +22,7 @@
                         <td>".$row['order_ID']."</td>
                         <td>".$customer['customer_name']."</td>
                         <td>".$customer['customer_address']."</td>
-                        <td>".$totalPrice."</td>
+                        <td>$".$totalPrice."</td>
                         <td>".$row['order_date']."</td>
                         <td>
                             <form action='order-receipt.php' method='post'>
@@ -38,8 +38,8 @@
                     </tr>";
             }
             echo "</table>";
-            echo "<div class='button-container'><form action='add-food-view.php' method='post'>
-                        <button type='submit' id='add-button'>Add</button>
+            echo "<div class='button-container'><form action='../src/index.php' method='post'>
+                        <button type='submit' id='add-button'>Return</button>
                 </form></div>
             ";
     }else{
