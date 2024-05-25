@@ -36,7 +36,7 @@
                                 <input type='hidden' name='food_name' value='" . $row['food_name'] . "'>
                                 <input type='hidden' name='price' value='" . $row['price'] . "'>
                                 <input type='hidden' id='order_date' name='order_date'>
-                                <input type='number' id='quantity' name='quantity' value=".$foodQuantityVal." min='1' max='".$row["stock"]."'>
+                                <input type='number' id='quantity' name='quantity' value=".$foodQuantityVal." min='0' max='".$row["stock"]."'>
                                 <button type='button' onclick='decrement()'>-</button>
                                 <button type='button' onclick='increment()'>+</button>
                                 <button type='submit' class='order' name='submit'> Submit Order </button>
@@ -61,7 +61,7 @@
 
                     function decrement() {
                         var input = document.getElementById('quantity');
-                        if (parseInt(input.value) > 1) {
+                        if (parseInt(input.value) >= 1) {
                             input.value = parseInt(input.value) - 1;
                         }
                     }
