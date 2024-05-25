@@ -8,7 +8,12 @@
     $new_order = array("food_ID" => $food_ID, "quantity"=> $order_quantity);
     
     if(isset($_SESSION['orders'])){
-        $_SESSION['orders'][$food_ID] = $order_quantity;
+
+        if ($order_quantity > 0){
+            $_SESSION['orders'][$food_ID] = $order_quantity;
+        } else {
+            unset($_SESSION['orders'][$food_ID]);
+        }
         header('Location: ../views/menu-view.php');
         exit();
     }else{
