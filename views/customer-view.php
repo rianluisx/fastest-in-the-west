@@ -16,7 +16,7 @@
                     "<input type='text' name='customer_name' id='customerName' required>".
                     "<br><br>".
                     "<label for ='customerAddress' > Address: </label>".
-                    "<input type='text' name='customer_address' id='customerAddress'>".
+                    "<input type='text' name='customer_address' id='customerAddress' required>".
                     "<br><br>".
                     "<button type='submit' class='order'>Make an Order</button>" .
                 "</form>" .

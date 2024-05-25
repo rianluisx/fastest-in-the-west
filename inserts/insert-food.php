@@ -15,5 +15,5 @@
         $conn->query($insertOrders);
     }
 
-    header("refresh: 1;url=http://localhost/fastest-in-the-west/views/manage-menu-view.php");
+    header("refresh: 1;url=../views/manage-menu-view.php");
 ?>
