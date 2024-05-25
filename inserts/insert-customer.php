@@ -12,9 +12,6 @@
     print_r($_SESSION);
     if ($conn->query($insertCustomer) === TRUE) {
         $_SESSION["customer_ID"] = $conn->insert_id;
-        header("refresh: 1; url=http://localhost/fastest-in-the-west/views/menu-view.php");
+        header("refresh: 1; url=../views/menu-view.php");
     }
-    
-
-    
 ?>
