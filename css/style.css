@@ -10,14 +10,32 @@
 }
 
 .user-options{
-    padding: 175px 0;
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.user-options img{
+    position: relative;
+    top: 40px;
+    left: 15px;
+    width: 100px;
+    height: 100px;
+
 }
 
 .header h1, p{
     margin: 0;
 }
 
+.menu-header{
+    font-size: 25px;
+    font-weight: 800;
+    font-family: 'Roboto';
+    position: relative;
+    top: 100px;
+    text-align: center;
+}

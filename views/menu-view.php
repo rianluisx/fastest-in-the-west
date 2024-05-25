@@ -2,12 +2,12 @@
 
     session_start();
     include '../DBConnector.php';
-    print_r($_SESSION);
-    echo "<br>";
+
     if(isset($_SESSION['customer_name']) && isset($_SESSION['customer_address'])) {
         $menuQuery = "SELECT * FROM menu";
         $menuResult = $conn->query($menuQuery);
-    
+        echo "<p class = 'menu-header'> Our Menu </p>";
+
         if ($menuResult->num_rows > 0) {
             while ($row = $menuResult->fetch_assoc()) {
                 
@@ -15,6 +15,8 @@
                 echo "<link rel='stylesheet' href='../css/style.css'>";
                 echo "<link rel='stylesheet' href='../css/buttons.css'>";
     
+
+
                 echo "<div class='cards-container'>" .
                         "<div class='cards'>" .
                             "<form action='food-view.php' method='post'>" .
@@ -29,10 +31,11 @@
                     "</div>";
             }
             echo "<br>";
-            echo "<div style='text-align: center; margin-top: 100px;'>" .
-                "<button style='width: 25%;' onclick='registerOrder()'>Submit Order</button>" . "&nbsp;" .
-                "<button onclick='viewOrders()'>View Orders</button>" .
-            "</div>";
+            echo "<div class='cstm-buttons'>" .
+                    "<button onclick ='registerOrder()' class='submit-order'> Submit Orders </button>" . "&nbsp" .
+                    "<button onclick ='viewOrders()' class='view-order'> View Orders </button>".
+                "</div>";
+            
             echo "<script>
                     function registerOrder(){
                         window.location.href = '../inserts/insert-session.php';

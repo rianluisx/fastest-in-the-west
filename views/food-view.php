@@ -16,51 +16,52 @@
             echo "<link rel='stylesheet' href='../css/cards.css'> ";
             echo "<link rel='stylesheet' href='../css/style.css'>";
             echo "<link rel='stylesheet' href='../css/buttons.css'>";
+            echo "<script src='https://kit.fontawesome.com/dc0eb96805.js' crossorigin='anonymous'></script>";
 
             echo "<div class='cards-container-food'>" .
-                "<div class='cards-food'>" .
- 
-                    "<img class='center' src='" . $row['food_image'] . "' alt='" . $row['food_name'] . "'>" .
- 
-                    "<div class='container-food'>" .
-                        "<h1><b>" . $row["food_name"] . "</b></h1>" .
-                        "<h3> $" . $row["price"] . "</h3>" .
-                        "<p class='lorem'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>".
-
-                        "<div class='quantity center'>
-                            <form action = '../inserts/session-insert-order.php' method = 'post'>
-                                <label for ='quantity'> Quantity: </label>
+                    "<div class='cards-food'>" .
+                        "<div class='container-food'>" .
+                            "<img class='center' src='" . $row['food_image'] . "' alt='" . $row['food_name'] . "'>" .
+                            "<br>".
+                            "<h1><b>" . $row["food_name"] . "</b></h1>" .
+                            "<h3> $" . $row["price"] . "</h3>" .
+                            "<p class='lorem'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>".
+                            "<form action = '../inserts/session-insert-order.php' method = 'post'>
                                 <input type='hidden' name='food_ID' value='" . $row['food_ID'] . "'>
                                 <input type='hidden' name='food_name' value='" . $row['food_name'] . "'>
                                 <input type='hidden' name='price' value='" . $row['price'] . "'>
                                 <input type='hidden' id='order_date' name='order_date'>
-                                <input type='number' id='quantity' name='quantity' value=".$foodQuantityVal." min='0' max='".$row["stock"]."'>
-                                <button type='button' onclick='decrement()'>-</button>
-                                <button type='button' onclick='increment()'>+</button>
-                                <button type='submit' class='order' name='submit'> Submit Order </button>
-                            </form>
-                            <br>
-                            <button onclick='goBack()' class='go-back'>Go Back</button>
-                        </div>".
+
+                                <div class='quantity'>
+                                    <button class ='quantifiable' type='button' onclick='decrement()'>
+                                        <i class='fa-solid fa-minus'></i>
+                                    </button>
+                                    <input type='number' id='qtyInput' name='quantity' value=".$foodQuantityVal." min='0' max='".$row["stock"]."'>
+                                    <button class ='quantifiable' type='button' onclick='increment()'>
+                                        <i class='fa-solid fa-add'></i>
+                                    </button>
+                                </div>
+                                <br> <br> <br>
+                                <button type='submit' class='order' name='submit'> Add Order </button>
+                                <button type='button' class='cancel' onclick ='goBack()'> Go Back </button> 
+                            </form>" .
+                        "</div>" .
                     "</div>" .
-                "</div>" .
                 "<br>" .
             "</div>";
 
-
-
             echo "<script>
                     function increment() {
-                        var input = document.getElementById('quantity');
+                        var input = document.getElementById('qtyInput');
                         if(parseInt(input.value) < ".$row['stock']."){
                             input.value = parseInt(input.value) + 1;
                         }
                     }
 
                     function decrement() {
-                        var input = document.getElementById('quantity');
+                        var input = document.getElementById('qtyInput');
                         if (parseInt(input.value) >= 1) {
                             input.value = parseInt(input.value) - 1;
                         }
