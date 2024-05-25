@@ -16,7 +16,7 @@
                 
                 <td>
                     <form action='update-food-view.php' method='post'>
-                    <input type='text' name='food_ID' value=" . $row['food_ID'] . " style='display:none'>
+                    <input type='hidden' name='food_ID' value=" . $row['food_ID'] . ">
                     <button type='submit'>Edit</button>
                     </form>
                 </td>
