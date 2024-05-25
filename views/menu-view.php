@@ -38,7 +38,7 @@
                         window.location.href = '../inserts/insert-session.php';
                     }
                     function viewOrders(){
-                        window.location.href = '../views/receipt.php';
+                        window.location.href = '../views/customer-receipt.php';
                     }
                     
                 </script>";
