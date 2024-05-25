@@ -31,23 +31,26 @@
 
         foreach ($_SESSION['orders'] as $food_ID => $quantity) {
             
-            $foodQuery = "SELECT food_name, price FROM menu WHERE food_ID = $food_ID";
-            $result = $conn->query($foodQuery);
+            if ($quantity > 0) {
 
-            if ($result->num_rows > 0) {
+                $foodQuery = "SELECT food_name, price FROM menu WHERE food_ID = $food_ID";
+                $result = $conn->query($foodQuery);
 
-                $row = $result->fetch_assoc();
-                $foodName = $row['food_name'];
-                $price = $row['price'];
-                $totalPrice = $price * $quantity;
-                $totalAmount += $totalPrice;
+                if ($result->num_rows > 0) {
 
-                echo "<tr>";
-                    echo "<td>" . $foodName . "</td>";
-                    echo "<td>" . $quantity . "</td>";
-                    echo "<td>$" . number_format($price, 2) . "</td>";
-                    echo "<td>$" . number_format($totalPrice, 2) . "</td>";
-                echo "</tr>";
+                    $row = $result->fetch_assoc();
+                    $foodName = $row['food_name'];
+                    $price = $row['price'];
+                    $totalPrice = $price * $quantity;
+                    $totalAmount += $totalPrice;
+
+                    echo "<tr>";
+                        echo "<td>" . $foodName . "</td>";
+                        echo "<td>" . $quantity . "</td>";
+                        echo "<td>$" . number_format($price, 2) . "</td>";
+                        echo "<td>$" . number_format($totalPrice, 2) . "</td>";
+                    echo "</tr>";
+                }
             }
         }
 
