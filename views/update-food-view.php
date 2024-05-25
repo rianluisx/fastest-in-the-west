@@ -19,7 +19,7 @@
         <label>Price</label>
         <input type=number min=0 value=".$food_result['price']." name='new_price' step=0.01 required>
         <label>Stock</label>
-        <input type=number min=0 value=".$food_result['stock']." name='new_stock' step=0.01 required>
+        <input type=number min=0 value=".$food_result['stock']." name='new_stock' required>
         <input type='hidden' name=food_ID value=$food_ID>
         <button type=submit>save</button>
     </form>

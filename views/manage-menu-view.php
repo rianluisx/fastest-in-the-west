@@ -24,7 +24,10 @@
     }
     echo "</table>";
     echo "<div class='button-container'><form action='add-food-view.php' method='post'>
-                <button type='submit' id='add-button'>Add</button>
+                <button type='submit' class='wide-button'>Add</button>
+        </form></div>
+        <div class='button-container'><form action='../src/index.php' method='post'>
+                        <button type='submit' class='wide-button'>Return</button>
         </form></div>
     "
 ?>
