@@ -19,14 +19,14 @@
                 <td>".$totalPrice."</td>
                 <td>".$row['order_date']."</td>
                 <td>
-                    <form action='.php' method='post'>
-                        <input type='hidden' name='food_ID' value=" . $row['order_ID'] . ">
-                        <input type='hidden' name='food_ID' value=" . $row['customer_ID'] . ">
+                    <form action='order-receipt.php' method='post'>
+                        <input type='hidden' name='order_ID' value=" . $row['order_ID'] . ">
+                        <input type='hidden' name='customer_ID' value=" . $row['customer_ID'] . ">
                         <button type='submit'>View Receipt</button>
                     </form>
                     <form action='.php' method='post'>
-                        <input type='hidden' name='food_ID' value=" . $row['order_ID'] . ">
-                        <input type='hidden' name='food_ID' value=" . $row['customer_ID'] . ">
+                        <input type='hidden' name='order_ID' value=" . $row['order_ID'] . ">
+                        <input type='hidden' name='customer_ID' value=" . $row['customer_ID'] . ">
                         <button type='submit'>Send Out</button>
                     </form>
                 </td>
