@@ -24,7 +24,6 @@ CREATE TABLE orders (
 
     order_ID INT AUTO_INCREMENT,
     customer_ID INT (6),
-    food_ID INT(6),
     order_date DATETIME,
     -- PRIMARY KEY (order_id) no idea if i primary key ang orderid since what if ang user mag order twice? like
     -- would that have the same order_ID or a diff one

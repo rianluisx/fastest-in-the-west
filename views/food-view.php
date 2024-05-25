@@ -1,18 +1,16 @@
 <?php 
-
+    session_start();
     include '../DBConnector.php';
-
-    
     if (isset($_POST['food_ID'])){
 
         $food_ID = $_POST["food_ID"];
-        $customer_ID = $_POST["customer_ID"];
         $foodAttributes = "SELECT * FROM menu WHERE food_ID = $food_ID";
+        $foodQuantityVal = 1;
+        if(key_exists($food_ID, $_SESSION['orders'])){
+            $foodQuantityVal = $_SESSION['orders'][$food_ID];
+        }
         $retrievedAttributes = $conn->query($foodAttributes);
-
-    
         if ($retrievedAttributes->num_rows > 0) {
-    
             $row = $retrievedAttributes->fetch_assoc();
     
             echo "<link rel='stylesheet' href='../css/cards.css'> ";
@@ -32,14 +30,13 @@
                         </p>".
 
                         "<div class='quantity center'>
-                            <form action = '../inserts/insert-order.php' method = 'post'>
+                            <form action = '../inserts/session-insert-order.php' method = 'post'>
                                 <label for ='quantity'> Quantity: </label>
                                 <input type='hidden' name='food_ID' value='" . $row['food_ID'] . "'>
                                 <input type='hidden' name='food_name' value='" . $row['food_name'] . "'>
                                 <input type='hidden' name='price' value='" . $row['price'] . "'>
-                                <input type='hidden' name='customer_ID' value='" . $customer_ID . "'>
                                 <input type='hidden' id='order_date' name='order_date'>
-                                <input type='number' id='quantity' name='quantity' value='1' min='1' max='".$row["stock"]."'>
+                                <input type='number' id='quantity' name='quantity' value=".$foodQuantityVal." min='1' max='".$row["stock"]."'>
                                 <button type='button' onclick='decrement()'>-</button>
                                 <button type='button' onclick='increment()'>+</button>
                                 <button type='submit' class='order' name='submit'> Submit Order </button>
@@ -47,11 +44,7 @@
                             <br>
                             <button onclick='goBack()' class='go-back'>Go Back</button>
                         </div>".
-
-
-    
                     "</div>" .
-                    
                 "</div>" .
                 "<br>" .
             "</div>";
