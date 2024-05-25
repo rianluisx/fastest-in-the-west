@@ -39,7 +39,7 @@
                                 <input type='hidden' name='price' value='" . $row['price'] . "'>
                                 <input type='hidden' name='customer_ID' value='" . $customer_ID . "'>
                                 <input type='hidden' id='order_date' name='order_date'>
-                                <input type='number' id='quantity' name='quantity' value='1' min='1'>
+                                <input type='number' id='quantity' name='quantity' value='1' min='1' max='".$row["stock"]."'>
                                 <button type='button' onclick='decrement()'>-</button>
                                 <button type='button' onclick='increment()'>+</button>
                                 <button type='submit' class='order' name='submit'> Submit Order </button>
@@ -61,7 +61,9 @@
             echo "<script>
                     function increment() {
                         var input = document.getElementById('quantity');
-                        input.value = parseInt(input.value) + 1;
+                        if(parseInt(input.value) < ".$row['stock']."){
+                            input.value = parseInt(input.value) + 1;
+                        }
                     }
 
                     function decrement() {
