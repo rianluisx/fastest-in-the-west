@@ -1,19 +1,13 @@
 <?php 
-
+    session_start();
     include '../DBConnector.php';
-
-    print_r($_POST);
+    print_r($_SESSION);
     echo "<br>";
-    if(isset($_POST['customer_name']) && isset($_POST['customer_address'])) {
+    if(isset($_SESSION['customer_name']) && isset($_SESSION['customer_address'])) {
 
-        $customerName = $_POST['customer_name'];
-        $customerAddress = $_POST['customer_address'];
-
-        $insertCustomer = "INSERT INTO customer (customer_name, customer_address) VALUES ('$customerName', '$customerAddress')";
-
-        if ($conn->query($insertCustomer) === TRUE) {
+        if (isset($_SESSION['customer_ID'])) {
             
-            $customer_ID = $conn->insert_id;
+            $customer_ID = $_SESSION['customer_ID'];
 
             $menuQuery = "SELECT * FROM menu";
             $menuResult = $conn->query($menuQuery);
