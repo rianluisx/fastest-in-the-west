@@ -29,10 +29,10 @@
                     "</div>";
             }
             echo "<br>";
-            echo "<div style='position:relative; top: 100px; left: 300px;'>" .
-                    "<button style='width: 25%;' onclick='registerOrder()'>Submit Order</button>" . "&nbsp" .
-                    "<button onclick = 'viewOrders()'> View Orders </button>" .
-                "</div>";
+            echo "<div style='text-align: center; margin-top: 100px;'>" .
+                "<button style='width: 25%;' onclick='registerOrder()'>Submit Order</button>" . "&nbsp;" .
+                "<button onclick='viewOrders()'>View Orders</button>" .
+            "</div>";
             echo "<script>
                     function registerOrder(){
                         window.location.href = '../inserts/insert-session.php';
@@ -48,7 +48,5 @@
     } else {
         echo "<script>alert('An error occured with the session');</script>";
     }
-
-
 
 ?>
