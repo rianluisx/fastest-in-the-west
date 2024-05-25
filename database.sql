@@ -38,9 +38,9 @@ CREATE TABLE order_details(
     order_ID INT,
     food_ID INT(6),
     quantity INT,
-    order_price DECIMAL(10,2),
-    FOREIGN KEY (order_ID) REFERENCES orders(order_ID) ON DELETE CASCADE,
-    FOREIGN KEY (food_ID) REFERENCES menu(food_ID)
+    order_price DECIMAL(10,2)
+    -- FOREIGN KEY (order_ID) REFERENCES orders(order_ID) ON DELETE CASCADE,
+    -- FOREIGN KEY (food_ID) REFERENCES menu(food_ID)
 
 ) ENGINE = InnoDB;
 

@@ -9,15 +9,8 @@
     
     if(isset($_SESSION['orders'])){
         $_SESSION['orders'][$food_ID] = $order_quantity;
-        echo "<script>
-            var orderAgain = confirm('Order placed successfully! Would you like to order again?');
-            if (orderAgain) {
-                window.location.href = '../views/menu-view.php';
-            } else {
-                window.location.href = '../src/index.php';
-            }
-
-        </script>";
+        header('Location: ../views/menu-view.php');
+        exit();
     }else{
         echo "<script>
             Error occured with appending order
