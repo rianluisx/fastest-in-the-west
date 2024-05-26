@@ -17,17 +17,19 @@
             echo "<div class='cards-grid-container'>";
             
             while ($row = $menuResult->fetch_assoc()) {
-                echo "<div class='cards-container'>" .
-                        "<div class='cards'>" .
-                            "<form action='food-view.php' method='post'>" .
-                                "<input type='image' class='center' src='" . $row['food_image'] . "' alt='" . $row['food_name'] . "'>" .
-                                "<input type='hidden' name='food_ID' value='" . $row['food_ID'] . "'>" .
-                            "</form>" .
-                            "<div class='container'>" .
-                                "<h4><b>" . $row["food_name"] . "</b></h4>" .
+                if($row['stock'] > 0){
+                    echo "<div class='cards-container'>" .
+                            "<div class='cards'>" .
+                                "<form action='food-view.php' method='post'>" .
+                                    "<input type='image' class='center' src='" . $row['food_image'] . "' alt='" . $row['food_name'] . "'>" .
+                                    "<input type='hidden' name='food_ID' value='" . $row['food_ID'] . "'>" .
+                                "</form>" .
+                                "<div class='container'>" .
+                                    "<h4><b>" . $row["food_name"] . "</b></h4>" .
+                                "</div>" .
                             "</div>" .
-                        "</div>" .
-                    "</div>";
+                        "</div>";
+                }
             }
 
             echo "</div>";
