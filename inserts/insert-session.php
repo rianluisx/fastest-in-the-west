@@ -18,8 +18,11 @@
         echo "<script>alert('No orders placed yet'); window.location.href = '../views/menu-view.php';</script>";
         exit();
     }
-
-    $order_date = date("Y-m-d h:i:s a");
+    $time_zone = "Asia/Hong_Kong";
+    $time_stamp = time();
+    $dt = new DateTime("now", new DateTimeZone($time_zone)); 
+    $dt->setTimestamp($time_stamp); 
+    $order_date = $dt->format("Y-m-d H:i:s");
     $customerName = $_SESSION['customer_name'];
     $customerAddress = $_SESSION['customer_address'];
 
