@@ -8,7 +8,7 @@
     $deleteOrderQuery = "DELETE FROM orders WHERE order_ID = '$order_ID';";
     $conn->query($deleteOrderQuery);
     $deleteCustomerQuery = "DELETE FROM customer WHERE customer_ID = '$customer_ID';";
-    $conn->query($deleteOrderQuery);
+    $conn->query($deleteCustomerQuery);
     $deleteDetailsQuery = "DELETE FROM order_details WHERE order_ID = '$order_ID';";
     $conn->query($deleteDetailsQuery);
 
