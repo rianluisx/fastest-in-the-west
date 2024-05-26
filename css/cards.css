@@ -31,6 +31,10 @@
 
 .container {
     padding: 10px 16px;
+}
+
+.container-update {
+    
 
 
 }
@@ -224,7 +228,38 @@ img{
     font-weight: 500;
 }
 
-/* css for manage order */
-.manage-order{
+/* css for manager-menu */
 
+.cards-manager {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: auto;
+    width: 350px;
+    height: 130px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.img-manager{
+    position: relative;
+    right: 95px;
+
+}
+
+.food-name{
+    position: relative;
+    left: 40px;
+    bottom: 75px;
+}
+
+.manage{
+    position: relative;
+    bottom: 65px;
+    left: 40px;
+}
+
+.stock{
+    position: relative;
+    left: 40px;
+    bottom: 75px;
 }

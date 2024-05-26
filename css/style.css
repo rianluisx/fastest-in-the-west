@@ -77,3 +77,18 @@
     flex: 0; 
 }
 
+.update-inventory{
+    padding: 10px;
+    font-weight: 500px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.update{
+    padding: 10px;
+    font-weight: 500px;
+    font-size: 30px;
+    text-align: center;
+}
+
+

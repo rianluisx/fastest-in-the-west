@@ -68,7 +68,7 @@ button:-webkit-details-marker {
 .cstm-buttons{
     position: relative;
     left: 50%;
-    top: 18%;
+    top: 20%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
