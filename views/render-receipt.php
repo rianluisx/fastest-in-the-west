@@ -1,14 +1,31 @@
 <?php
+    function renderReceipt($order_array, $conn) {
 
-function renderReceipt($order_array, $conn){
+        echo "<link rel='stylesheet' href='../css/cards.css'> ";
+        echo "<link rel='stylesheet' href='../css/style.css'>";
+        echo "<link rel='stylesheet' href='../css/buttons.css'>";
 
-    echo "<link rel='stylesheet' href='../css/cards.css'> ";
-    echo "<link rel='stylesheet' href='../css/style.css'>";
-    echo "<link rel='stylesheet' href='../css/buttons.css'>";
-
-    echo "<h1 style='text-align: center; padding-top: 10px;'> Order Receipt </h1><br><br>";
+        echo "<h1 style='text-align: center; position: relative; top: 36px'> Order Receipt </h1><br><br>";
 
         $totalAmount = 0;
+
+        foreach ($order_array as $food_ID => $quantity) {
+            if ($quantity > 0) {
+                $foodQuery = "SELECT price FROM menu WHERE food_ID = $food_ID";
+                $result = $conn->query($foodQuery);
+
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $price = $row['price'];
+                    $totalPrice = $price * $quantity;
+                    $totalAmount += $totalPrice;
+                }
+            }
+        }
+
+        echo "<div class='total-amount'>
+                <p>Total Amount: $" . number_format($totalAmount, 2) . "</p>" .
+            "</div><br>";
 
         foreach ($order_array as $food_ID => $quantity) {
             if ($quantity > 0) {
@@ -21,7 +38,6 @@ function renderReceipt($order_array, $conn){
                     $price = $row['price'];
                     $foodImage = $row['food_image'];
                     $totalPrice = $price * $quantity;
-                    $totalAmount += $totalPrice;
 
                     echo "<div class='cards'>";
                         echo "<img src='$foodImage' alt='$foodName' class='center'>";
@@ -33,27 +49,18 @@ function renderReceipt($order_array, $conn){
                         echo "</div>";
                     echo "</div>" . "<br> ";
                 }
-            }
+            } 
         }
-        
-        echo "<div class='total-amount'>
-                <p>Total Amount: $" . number_format($totalAmount, 2) . "</p>" .
-            "</div>";
-
 
         echo "<div class='go-back'>
                 <button onclick='goBack()' >Go Back</button>
             </div>";
-
-
 
         echo "<script>
                 function goBack(){
                     window.history.back();
                 }
             </script>";
-}
+    }
 
 ?>
-
-

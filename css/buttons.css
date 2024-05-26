@@ -65,14 +65,14 @@ button:-webkit-details-marker {
 }
 
 
-
 .cstm-buttons{
-    position: absolute;
+    position: relative;
     left: 50%;
-    top: 81%;
+    top: 18%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+    padding: 50px;
 }
 
 .quantifiable{
@@ -102,4 +102,10 @@ button:-webkit-details-marker {
 
 #qtyInput:focus-visible{
     outline: none;
+}
+
+.button-container{
+    position: relative;
+    top: 150px;
+    text-align: center;
 }
