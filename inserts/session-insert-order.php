@@ -2,17 +2,17 @@
     session_start();
     include "../DBConnector.php";
 
-    $food_ID = $_POST["food_ID"];
-    $order_quantity = $_POST["quantity"];
+    $foodID = $_POST["food_ID"];
+    $orderQuantity = $_POST["quantity"];
 
-    $new_order = array("food_ID" => $food_ID, "quantity"=> $order_quantity);
+    $newOrder = array("food_ID" => $foodID, "quantity"=> $orderQuantity);
     
     if(isset($_SESSION['orders'])){
 
-        if ($order_quantity > 0){
-            $_SESSION['orders'][$food_ID] = $order_quantity;
+        if ($orderQuantity > 0){
+            $_SESSION['orders'][$foodID] = $orderQuantity;
         } else {
-            unset($_SESSION['orders'][$food_ID]);
+            unset($_SESSION['orders'][$foodID]);
         }
         header('Location: ../views/menu-view.php');
         exit();

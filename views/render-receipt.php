@@ -1,5 +1,5 @@
 <?php
-    function renderReceipt($order_array, $conn) {
+    function renderReceipt($orderArray, $conn) {
 
         echo "<link rel='stylesheet' href='../css/cards.css'> ";
         echo "<link rel='stylesheet' href='../css/style.css'>";
@@ -9,9 +9,10 @@
 
         $totalAmount = 0;
 
-        foreach ($order_array as $food_ID => $quantity) {
+        // calculates the total price of the ordered item and the total amount of all orders
+        foreach ($orderArray as $foodID => $quantity) {
             if ($quantity > 0) {
-                $foodQuery = "SELECT price FROM menu WHERE food_ID = $food_ID";
+                $foodQuery = "SELECT price FROM menu WHERE food_ID = $foodID";
                 $result = $conn->query($foodQuery);
 
                 if ($result->num_rows > 0) {
@@ -27,9 +28,10 @@
                 <p>Total Amount: $" . number_format($totalAmount, 2) . "</p>" .
             "</div><br>";
 
-        foreach ($order_array as $food_ID => $quantity) {
+        // displays info of the food item
+        foreach ($orderArray as $foodID => $quantity) {
             if ($quantity > 0) {
-                $foodQuery = "SELECT food_name, price, food_image FROM menu WHERE food_ID = $food_ID";
+                $foodQuery = "SELECT food_name, price, food_image FROM menu WHERE food_ID = $foodID";
                 $result = $conn->query($foodQuery);
 
                 if ($result->num_rows > 0) {

@@ -19,7 +19,7 @@ if ($orderResult->num_rows > 0) {
         $customer = $conn->query($customerQuery)->fetch_assoc();
         $totalPriceQuery = "SELECT SUM(order_price) AS total_price FROM order_details WHERE order_ID = '".$row['order_ID']."';";
         $totalPrice = $conn->query($totalPriceQuery)->fetch_assoc()['total_price'];
-        $order_date = (new DateTime($row['order_date']))->format("M d, Y h:i:s a");
+        $orderDate = (new DateTime($row['order_date']))->format("M d, Y h:i:s a");
 
         echo "<div class='cards-container'>" .
                 "<div class='cards'>".
@@ -36,7 +36,7 @@ if ($orderResult->num_rows > 0) {
                         }
 
                         echo "<p class='total'>Total: $". $totalPrice . "</p>" .
-                            "<p class='date'>Time: ". $order_date . "</p>";
+                            "<p class='date'>Time: ". $orderDate . "</p>";
             
                     echo "</div>" .
 

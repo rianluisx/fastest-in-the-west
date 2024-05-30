@@ -4,16 +4,16 @@
     include 'render-receipt.php';
 
 
-    $order_ID = $_POST['order_ID'];
-    $order_array = array();
-    $orderQuery = "SELECT * FROM order_details WHERE order_ID = '$order_ID';";
+    $orderID = $_POST['order_ID'];
+    $orderArray = array();
+    $orderQuery = "SELECT * FROM order_details WHERE order_ID = '$orderID';";
     $orders = $conn->query($orderQuery);
     while ($order = $orders->fetch_assoc()) {
-        $order_array[$order['food_ID']] = $order['quantity'];
+        $orderArray[$order['food_ID']] = $order['quantity'];
     }
 
 
-    renderReceipt($order_array, $conn);
+    renderReceipt($orderArray, $conn);
     
     echo "<script>
             function goBack() {

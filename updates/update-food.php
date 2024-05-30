@@ -2,19 +2,19 @@
 
     include "../DBConnector.php";
 
-    $food_ID = $_POST["food_ID"];
-    $food_name = $_POST["new_food_name"];
+    $foodID = $_POST["food_ID"];
+    $foodName = $_POST["new_food_name"];
     $price = $_POST["new_price"];
     $stock = $_POST["new_stock"];
 
     
-    $food_exists_qry = "SELECT * FROM menu WHERE food_name='$food_name';";
-    $food_exists = $conn->query( $food_exists_qry)->fetch_assoc();
-    if($food_exists && $food_ID != $food_exists['food_ID']){
+    $getFood = "SELECT * FROM menu WHERE food_name='$foodName';";
+    $foodExists = $conn->query($getFood)->fetch_assoc();
+    if($foodExists && $foodID != $foodExists['food_ID']){
         echo "<script>alert('Food name already exists!')</script>";
     }else{
-        $food_update_qry = "UPDATE menu SET food_name='$food_name', price='$price', stock='$stock' WHERE food_ID = $food_ID;";
-        $conn->query($food_update_qry);
+        $updateFood = "UPDATE menu SET food_name='$foodName', price='$price', stock='$stock' WHERE food_ID = $foodID;";
+        $conn->query($updateFood);
     }
 
     header("refresh: 1;url=../views/manage-menu-view.php");

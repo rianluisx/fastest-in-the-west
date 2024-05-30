@@ -3,11 +3,11 @@
     include '../DBConnector.php';
     if (isset($_POST['food_ID'])){
 
-        $food_ID = $_POST["food_ID"];
-        $foodAttributes = "SELECT * FROM menu WHERE food_ID = $food_ID";
+        $foodID = $_POST["food_ID"];
+        $foodAttributes = "SELECT * FROM menu WHERE food_ID = $foodID";
         $foodQuantityVal = 1;
-        if(key_exists($food_ID, $_SESSION['orders'])){
-            $foodQuantityVal = $_SESSION['orders'][$food_ID];
+        if(key_exists($foodID, $_SESSION['orders'])){
+            $foodQuantityVal = $_SESSION['orders'][$foodID];
         }
         $retrievedAttributes = $conn->query($foodAttributes);
         if ($retrievedAttributes->num_rows > 0) {
